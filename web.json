@@ -8,6 +8,5 @@
     "name": "WEBJOBS_IDLE_TIMEOUT",
     "value": "86400",
     "slotSetting": false
-  },
-  ...
+  }
 ]
