@@ -1,0 +1,13 @@
+[
+  {
+    "name": "WEBSITES_ENABLE_APP_SERVICE_STORAGE",
+    "value": "true",
+    "slotSetting": false
+  },
+  {
+    "name": "WEBJOBS_IDLE_TIMEOUT",
+    "value": "86400",
+    "slotSetting": false
+  },
+  ...
+]
